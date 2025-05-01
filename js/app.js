@@ -1,14 +1,30 @@
+/* 你的 Github Pages 二级域名或自定义域名。自定义域名需要在 Github 中正确绑定。不应当有斜杠。 
+示例：
 const WEBSITE = "https://pandaoxi.github.io";
-const APPID = "KeaEh5SIw5KH8dEHEQQYaanU-MdYXbMMI";
-const APPKEY = "mSFSDLq3fSlVGNb2PCjaHltc";
+*/
+const WEBSITE = "https://daoxi365.dpdns.org";
+/* 刚才的 REST API 地址。国际版用户不填。 */
+const REST_API = "https://zvzv5nv6.lc-cn-n1-shared.com";
+/* 刚才的 APPID 和 APPKEY。必填。 */
+const APPID = "ZvZV5nv6pzsi7UY4T258Oxhk-gzGzoHsz";
+const APPKEY = "qZAGxB5eEeYWKJGlN6vbmwoB";
+/* 
+你是否在 Github Pages 上部署此项目呢？
+如果是，仓库名称是什么呢？
+（若仓库名称为 <username>.github.io 则不需要设置 GITHUB_REPOSITORY）
+如下示例，将链接合成为 https://<username>.github.io/<repository>：
 const GITHUB = true;
 const GITHUB_REPOSITORY = "shURL";
+*/
+const GITHUB = false;
+const GITHUB_REPOSITORY = "";
+/* 生成的短网址 x 参数的长度。最小为 1，最大为 48。 */
 const LENGTH = 4;
 
 AV.init({
 	appId: APPID,
 	appKey: APPKEY,
-	// serverURL: WEBSITE,
+	serverURL: REST_API,
 });
 AV.debug.enable();
 const SHURL = AV.Object.extend("shURL");

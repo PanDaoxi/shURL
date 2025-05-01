@@ -1,69 +1,75 @@
-# 「$\texttt{shURL}$ 短网址」
+# 「shURL 短网址」
 
 >   欢迎使用 $\texttt{shURL}$！
->   这是 $\texttt{shURL}$ 工具（以下简称此工具）的使用文档。
+>   这是 $\texttt{shURL}$ 工具的使用文档。
 >
 >   [TOC]
+>
+>   
 
 ---
 
-## 总览
+## 综述
 
 此工具为一「短网址」工具。
 
 何为短网址？简单来讲，就是以工具将原网址缩短长度，使访问更加便捷。
+
 举个简单的例子：
 
-```
-原网址：
-https://www.bilibili.com/video/BV1DK4y1z7wq/?vd_source=c2c603cbba8a549035c5aaed2e9faa97
-短网址：
-https://pandaoxi.github.io/shURL/?x=Gs64
-```
+原网址：<https://www.bilibili.com/video/BV1DK4y1z7wq/?vd_source=c2c603cbba8a549035c5aaed2e9faa97>
+短网址：<https://daoxi365.dpdns.org/?x=pkCf>
 
-显然，它的实现是需要后端服务器的。但是，此工具选择了基于 $\texttt{LeanCloud}$ 的线上储存，因此可以运行于静态网站，如 $\texttt{Github/Gitee Pages}$、$\texttt{Netlify}$ 等。
+显然，它实现链接转换是需要后端服务器、数据库的。但是，此工具选择了基于 LeanCloud 的线上储存，因此可以运行于静态网站，如 `Github Pages`、`Netlify` 等。
 
 ## 操作步骤
 
-1.   注册一个 $\texttt{LeanCloud}$​ （如果你使用国外网络环境，推荐使用**国际版**）账号。
+1.   注册或登录一个 LeanCloud​ 帐号。LeanCloud 账号分为国际、国内两种，如果你使用国外网络环境或用户面向国外，推荐使用**国际版**。反之，则建议使用国内版。
+     本网站当前使用国内版 LeanCloud，可大幅提升访问速度。{% ihighlighter 但是注册国内版 LeanCloud 账号需要实名认证。 cyan %}
 
-     ![](./img/1.png)
+     ![图：国际版账号注册图](./img/1.png)
 
-2.   验证邮箱后，创建一个应用。
+2.   创建一个新应用。应用名称随便写；计价方案选择开发版，否则会被收费。
 
      ![](./img/2.png)
 
-3.   复制凭证信息。
+3.   进入刚刚创建的应用，左侧边栏下划到最后，在“设置”中找到“应用凭证”，在右侧按如图方式复制凭证信息。
+     注意：第四步 {% ihighlighter 国内版 red %} 用户必须保留。国际版用户可以不使用此 rest api 地址。
 
-     ![](./img/3.png)
+     ![图：我已配置好的一个国内版应用的凭证](./img/3.png)
 
-4.   在此工具中修改相关内容。
+4.   打开 `/js/app.js` ，按注释（绿字）要求修改相关内容。
 
      ![](./img/4.png)
 
 5.   本地测试。
+     如果有 Python 环境，可以使用以下命令打开一个开发环境：
 
-     ![](./img/5.png)
+     ```bat
+     python -m http.server 8000
+     # 接下来你可以在 127.0.0.1:8000 访问到你的页面。
+     ```
 
-     ![](./img/6.png)
+     ![图：测试](./img/5.png)
+
+     ![图：测试](./img/6.png)
 
      ![](./img/7.png)
 
 6.   关于个性化：
 
-     您可以修改 `media` 文件夹下的网站图标（`favicon.ico`）和标志（`logo.png`）。
+     -   您可以修改 `media` 文件夹下的网站图标（`favicon.ico`）和标志（`logo.png`）。
+     -   您可以自行修改网页样式，但是我希望您能保留帮助文档的链接。
 
-7.   修改 `WEBSITE` 为您自己的网站。
+7.   push 到远端。打开 pages 服务或用其他平台发布。
 
-8.   上传。
+     ![图：提交后的样子](./img/8.png)
 
-     ![](./img/8.png)
+8.   修改安全网址。
 
-9.   修改安全网址。
+     ![图：修改安全网址的操作（用的旧图）](./img/9.png)
 
-     ![](./img/9.png)
-
-10.   测试，完成。
+9.   测试，完成。
 
 ## 补充
 
