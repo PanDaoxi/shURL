@@ -2,9 +2,3 @@ name = "shurl"
 compatibility_date = "2024-05-21"
 
 pages_build_output_dir = "public"
-
-[[d1_databases]]
-binding = "DB"
-database_name = "shurl-db"
-database_id = "e0609ed1-30f6-49e3-93f2-e0d08d46baf3"
-preview_database_id = "DB"
